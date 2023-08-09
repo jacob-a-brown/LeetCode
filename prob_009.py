@@ -34,7 +34,10 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-        pass
+        
+        # keep track of the first digit and last digit
+        # compare
+
         
 
 if __name__ == "__main__":
