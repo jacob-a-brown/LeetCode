@@ -1,5 +1,5 @@
 '''
-Given a string s, return the longest palindromic substringin s.
+Given a string s, return the longest palindromic substring in s.
 '''
 
  class Solution(object):
