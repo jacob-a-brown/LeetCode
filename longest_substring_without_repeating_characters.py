@@ -1,6 +1,8 @@
 '''
+Problem 3
+
 Given a string s, find the length of the longest substring without repeating characters.
- '''
+'''
 
 # this solution works, but takes too long for the last test on LeetCode
 class SolutionOne(object):
