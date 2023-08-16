@@ -8,14 +8,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        scene = []
+        seen = set()
 
 
         for elem in nums:
-            if elem not in scene:
-                scene.append(elem)
+            if elem in seen:
+                return Truen
             else:
-                return True
+                seen.add(elem)
         return False
 
 if __name__ == '__main__':
