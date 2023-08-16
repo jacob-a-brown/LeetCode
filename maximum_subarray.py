@@ -11,7 +11,7 @@ class Solution(object):
         '''
         1. Check every subarray
         2. Record its sum
-        3. If it is the maximum save the subarray
+        3. If it is the maximum save the summation
         '''
 
         max_subarray_sum = 0
