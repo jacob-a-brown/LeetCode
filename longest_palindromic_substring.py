@@ -46,7 +46,7 @@ class Solution(object):
                     elif len(str_to_eval) == palindrome_length:
                         palindromes.append(str_to_eval)
 
-        return palindromes
+        return palindromes[0]
 
 if __name__ == '__main__':
 
