@@ -25,12 +25,17 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+
+        '''
+        1. Check if a string is a palindrome
+        2. If it is a palindrome and it is longer than previous palindromes, save it and record its length
+        3. If it is a palindrome and it is the same length as the previous palindromes, save it and continue
+        '''
         
         palindrome_length = 1
         palindromes = []
         num_letters = len(s)
 
-        # get all substrings. check if they are a palindrome
         for str_len in range(num_letters):
             for l in range(num_letters-str_len):
                 str_to_eval = s[l:1+l+str_len]
