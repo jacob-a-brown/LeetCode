@@ -16,19 +16,19 @@ class Solution(object):
 
         first_round_flag = True
         num_elements = len(nums)
-        print(num_elements)
+        #print(num_elements)
 
         for subarray_length in range(1, num_elements + 1):
             for i in range(num_elements - subarray_length + 1):
                 subarray = nums[i:i+subarray_length]
-                print(i, subarray_length, subarray)
+                #print(i, subarray_length, subarray)
                 subarray_sum = sum(subarray)
                 if first_round_flag:
                     max_subarray_sum = subarray_sum
                     first_round_flag = False
                 if subarray_sum > max_subarray_sum:
                     max_subarray_sum = subarray_sum
-            print('')
+            #print('')
 
         return max_subarray_sum
 

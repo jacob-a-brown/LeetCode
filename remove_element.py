@@ -18,11 +18,19 @@ class Solution(object):
         :rtype: int
         """
 
-        return_array = []
-        for elem in nums:
-            if elem != val:
-                return_array.append(elem)
-        return len(return_array)
+        num_rounds = len(nums)
+        cur_round = 0
+        index = 0
+
+        while cur_round < num_rounds:
+            if nums[index] != val:
+                index += 1
+                cur_round += 1
+            else:
+                nums.pop(index)
+                cur_round += 1
+
+        return(len(nums))
 
 if __name__ == '__main__':
 
@@ -31,4 +39,5 @@ if __name__ == '__main__':
     expected_outs = [2, 5]
     for i in range(len(ins)):
         sol = Solution().removeElement(ins[i], vals[i])
+        print(ins[i])
         print(f'Example {i+1} is {sol == expected_outs[i]} -- expected {expected_outs[i]} got {sol}')
