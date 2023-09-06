@@ -33,11 +33,6 @@ class Solution(object):
     def threeSum_2(self, nums):
         triplets = []
 
-        # sort into negatives, zeros, and positives
-        #negatives = [num for num in nums if num < 0]
-        #zeros = [num for num in nums if num == 0]
-        #positives = [num for num in nums if num > 0]
-
         negatives = []
         zeros = []
         positives = []
@@ -50,10 +45,14 @@ class Solution(object):
             else:
                 positives.append(n)
 
+        # turn into sets for faster lookup time
+        N = set(negatives)
+        P = set(positives)
+
         # case 1: there is at least 1 zero
         if len(zeros) >= 1:
             for n in negatives:
-                if -1*n in positives:
+                if -1*n in P:
                     triplet = [n, -1*n, 0]
                     triplet.sort()
                     if triplet not in triplets:
@@ -68,7 +67,7 @@ class Solution(object):
         if len(positives) >= 2:
             for i in range(0, len(positives) - 1):
                 for j in range(i + 1, len(positives)):
-                    if  -1*(positives[i] + positives[j]) in negatives:
+                    if  -1*(positives[i] + positives[j]) in N:
                             triplet = [-1*(positives[i] + positives[j]), positives[i], positives[j]]
                             triplet.sort()
                             if triplet not in triplets:
@@ -78,7 +77,7 @@ class Solution(object):
         if len(negatives) >= 2:
             for i in range(0, len(negatives) - 1):
                 for j in range(i + 1, len(negatives)):
-                    if -1*(negatives[i] + negatives[j]) in positives:
+                    if -1*(negatives[i] + negatives[j]) in P:
                         triplet = [-1*(negatives[i] + negatives[j]), negatives[i], negatives[j]]
                         triplet.sort()
                         if triplet not in triplets:
