@@ -27,14 +27,25 @@ class Solution(object):
                              '9': 'wxyz',
                              '0': ''}
 
-        combinations = []
+        res = []
 
-
-        def combine(combos, digits):
+        def combine_recursive(i, curStr):
 
             # base case
-            if len(digits) == 0:
-                combinations.append(combos)
+            if len(curStr) == len(digits):
+                res.append(curStr)
+                return
 
             # recursive case
             else:
+                for c in number_to_letters[digits[i]]:
+                    combine_recursive(i+1, curStr + c)
+
+
+        combine_recursive(0, "")
+
+        return res
+
+if __name__ == '__main__':
+    in = '23'
+    print(Solution().letterCombinations(in))
