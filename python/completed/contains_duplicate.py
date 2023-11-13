@@ -15,7 +15,7 @@ class Solution(object):
 
         for elem in nums:
             if elem in seen:
-                return Truen
+                return True
             else:
                 seen.add(elem)
         return False
