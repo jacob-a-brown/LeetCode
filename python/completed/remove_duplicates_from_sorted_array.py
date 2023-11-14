@@ -1,4 +1,6 @@
 '''
+Problem 26
+
 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.
 The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
@@ -30,6 +32,16 @@ class Solution(object):
                 array_length -= 1
             
         return len(nums)
+
+    def removeDuplicates2(self, nums):
+        left = 0
+
+        for right in range(1, len(nums)):
+            if nums[left] != nums[right]:
+                nums[left+1] = nums[right]
+                left += 1
+
+        return left + 1
 
 if __name__ == '__main__':
 
