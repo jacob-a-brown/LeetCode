@@ -1,4 +1,6 @@
 '''
+Problem 1
+
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -32,6 +34,17 @@ class Solution(object):
 
         if sum_not_found is False:
             return [starting_index, i]
+
+    def twoSum2(self, nums, target):
+        # key: target-number
+        # value: number index
+        sum_dict = {}
+
+        for i in range(len(nums)):
+            if nums[i] in sum_dict.keys():
+                return [sum_dict[nums[i]], i]
+            else:
+                sum_dict[target-nums[i]] = i
 
 if __name__ == '__main__':
     numbers = [3,3]
